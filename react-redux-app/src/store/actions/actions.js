@@ -1,0 +1,5 @@
+import axios from 'axios';
+
+export const FETCHING_CHAR_START = "FETCHING_CHAR_START";
+export const FETCHING_CHAR_SUCCESS = "FETCHING_CHAR_SUCCESS";
+export const FETCHING_CHAR_FAILURE = "FETCHING_CHAR_FAILURE"
