@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import { getAdvice} from '../store/actions';
@@ -6,6 +6,10 @@ import { getAdvice} from '../store/actions';
 import '../App.css';
 
 const Advice = ({ getAdvice, advice, isFetching, error}) => {
+    useEffect(() => {
+        getAdvice()
+    }, [getAdvice]);
+    
     if (isFetching) {
         return <h2>Fetching Wisdom</h2>;
     }
