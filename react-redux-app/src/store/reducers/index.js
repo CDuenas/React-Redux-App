@@ -1,15 +1,25 @@
+import { FETCHING_ADVICE_START, FETCHING_ADVICE_SUCCESS } from "../actions";
+
 const initialState = {
-    "ClassJobCategory": {
-        "Name": "PLD"
-    },
-    "Description": "One of the fabled relic weapons.",
-    "ID": 1675,
-    "LevelItem": 80,
-    "Name": "Curtana"
-}
+    advice: null,
+    isFetching: false,
+    error: ""
+};
 
 export const reducer = (state = initialState, action) => {
     switch (action.type) {
+        case FETCHING_ADVICE_START:
+            return {
+                ...state,
+                isFetching: true,
+                error: ""
+            };
+        case FETCHING_ADVICE_SUCCESS:
+            return {
+                ...state,
+                isFetching: false,
+                advice: action.payload
+            };
         default:
             return state;
     }

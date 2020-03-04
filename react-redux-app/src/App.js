@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.css';
-import Character from './components/Character';
+import Advice from './components/Advice';
+import Wizard from '../src/Wizard.jpg';
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello</h1>
-      
+      <h1>Welcome to the little shop of Wisdom!</h1>
+      <img src={Wizard} alt="Wise Wizard" ></img>
+      <Advice />
     </div>
   );
 }
